@@ -1,0 +1,86 @@
+name: CI — Lint & Pipeline Check
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: |
+          cd python
+          pip install -r requirements.txt
+          pip install ruff
+
+      - name: Lint with ruff
+        run: |
+          cd python
+          ruff check src/ run.py --output-format=github
+
+  pipeline:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: |
+          cd python
+          pip install -r requirements.txt
+
+      - name: Generate sample data
+        run: |
+          cd python
+          python run.py sample-data
+
+      - name: Run full pipeline (phase5)
+        run: |
+          cd python
+          python run.py phase5
+
+      - name: Verify outputs exist
+        run: |
+          test -f python/output/data_issues.csv
+          test -f python/output/receivables_computed.csv
+          test -f python/output/reminder_log.csv
+          test -f python/output/monthly_log.csv
+          test -f python/output/dashboard.html
+          test -f python/output/collections_dashboard.xlsx
+          test -f python/output/run_log.csv
+          test -f python/output/phase5_operator_summary.md
+          test -f deploy/index.html
+          test -f deploy/collections_dashboard.xlsx
+          test -f deploy/run_log.csv
+          test -f deploy/phase5_operator_summary.md
+          test -f deploy/receivables_computed.csv
+          test -f deploy/data_issues.csv
+          echo "All expected outputs verified."
+
+      - name: Show operator summary
+        run: cat python/output/phase5_operator_summary.md
+
+      - name: Upload pipeline artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pipeline-outputs
+          path: |
+            python/output/
+            deploy/
+          retention-days: 14
