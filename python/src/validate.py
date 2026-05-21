@@ -7,7 +7,7 @@ from typing import Any
 
 import pandas as pd
 
-from .settings import load_config, normalize_header
+from .settings import load_config
 
 EMAIL_RE = re.compile(r"^[^\s@]+@[^\s@]+\.[^\s@]+$")
 

@@ -1,0 +1,4 @@
+shipment_id,customer_id,invoice_amount,invoice_date,due_date,amount_paid_total,outstanding,is_settled,due_date_parsed,days_to_due,days_overdue,customer_name,segment,email,eligible_for_reminder,eligible_for_overdue,in_7d_window,in_3d_window,in_1d_window
+S001,C001,100000.0,2025-04-01,2025-05-01,40000.0,60000.0,False,2025-05-01,-385,385,Bhavya Metals Pvt Ltd,Mid,customer.1@recykal.com,True,True,False,False,False
+S002,C002,250000.0,2025-03-15,2025-04-29,0.0,250000.0,False,2025-04-29,-387,387,Greentech Recyclers Pvt Ltd,Large,customer.2@recykal.com,True,False,False,False,False
+S003,C003,80000.0,2025-04-10,2025-05-25,80000.0,0.0,True,2025-05-25,-361,361,Apex Metal Industries,Mid,customer.3@recykal.com,False,False,False,False,False

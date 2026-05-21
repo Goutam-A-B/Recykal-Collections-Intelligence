@@ -148,6 +148,8 @@ def run_phase5_pipeline() -> dict[str, Any]:
     shutil.copyfile(xlsx_path, deploy_dir / "collections_dashboard.xlsx")
     shutil.copyfile(run_log_path, deploy_dir / "run_log.csv")
     shutil.copyfile(summary_path, deploy_dir / "phase5_operator_summary.md")
+    shutil.copyfile(receivables_path, deploy_dir / "receivables_computed.csv")
+    shutil.copyfile(issues_path, deploy_dir / "data_issues.csv")
 
     return {
         "run_log": run_log,
