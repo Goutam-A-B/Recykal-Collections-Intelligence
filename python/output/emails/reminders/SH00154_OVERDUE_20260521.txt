@@ -1,0 +1,12 @@
+Payment Reminder (OVERDUE)
+
+Customer: Bhavya Metals Pvt Ltd
+Shipment ID: SH00154
+Segment: Mid
+Invoice Amount: 663,577.94
+Amount Paid: 0.00
+Outstanding Balance: 663,577.94
+Due Date: 2026-04-12
+39 day(s) overdue
+
+CC: ai-strategy-interns-case-submissionsleads@recykal.com

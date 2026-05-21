@@ -1,0 +1,25 @@
+Monthly Balance Confirmation — 2026-05
+
+Customer: Vertex Recycling Solutions (C008)
+
+  SH00327: invoice 18,649,034.00, paid 11,527,552.92, outstanding 7,121,481.08, due 2026-06-16 (days_to_due=26)
+  SH00351: invoice 2,285,356.39, paid 0.00, outstanding 2,285,356.39, due 2026-06-23 (days_to_due=33)
+  SH00359: invoice 2,567,621.95, paid 0.00, outstanding 2,567,621.95, due 2026-06-24 (days_to_due=34)
+  SH00368: invoice 820,955.52, paid 0.00, outstanding 820,955.52, due 2026-07-02 (days_to_due=42)
+  SH00403: invoice 846,854.85, paid 0.00, outstanding 846,854.85, due 2026-07-02 (days_to_due=42)
+  SH00413: invoice 1,695,446.03, paid 0.00, outstanding 1,695,446.03, due 2026-07-02 (days_to_due=42)
+  SH00420: invoice 8,146,541.47, paid 0.00, outstanding 8,146,541.47, due 2026-07-02 (days_to_due=42)
+  SH00423: invoice 1,931,136.67, paid 0.00, outstanding 1,931,136.67, due 2026-07-02 (days_to_due=42)
+  SH00428: invoice 1,094,952.32, paid 0.00, outstanding 1,094,952.32, due 2026-07-02 (days_to_due=42)
+  SH00472: invoice 3,330,620.68, paid 0.00, outstanding 3,330,620.68, due 2026-07-03 (days_to_due=43)
+  SH00524: invoice 2,303,994.60, paid 0.00, outstanding 2,303,994.60, due 2026-07-03 (days_to_due=43)
+  SH00525: invoice 1,828,351.00, paid 0.00, outstanding 1,828,351.00, due 2026-07-03 (days_to_due=43)
+  SH00538: invoice 903,055.10, paid 0.00, outstanding 903,055.10, due 2026-07-03 (days_to_due=43)
+  SH00566: invoice 4,142,681.09, paid 0.00, outstanding 4,142,681.09, due 2026-07-04 (days_to_due=44)
+  SH00576: invoice 2,056,101.86, paid 0.00, outstanding 2,056,101.86, due 2026-07-04 (days_to_due=44)
+  SH00592: invoice 1,204,136.19, paid 0.00, outstanding 1,204,136.19, due 2026-07-05 (days_to_due=45)
+
+Total outstanding: 42,279,286.80
+
+Please confirm or dispute by reply.
+CC: ai-strategy-interns-case-submissionsleads@recykal.com

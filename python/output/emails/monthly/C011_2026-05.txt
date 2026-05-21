@@ -1,0 +1,10 @@
+Monthly Balance Confirmation — 2026-05
+
+Customer: Krishna Metals India (C011)
+
+  SH00594: invoice 3,530,547.02, paid 2,510,528.72, outstanding 1,020,018.30, due 2026-06-20 (days_to_due=30)
+
+Total outstanding: 1,020,018.30
+
+Please confirm or dispute by reply.
+CC: ai-strategy-interns-case-submissionsleads@recykal.com

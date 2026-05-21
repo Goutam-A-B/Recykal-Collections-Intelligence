@@ -1,0 +1,26 @@
+Monthly Balance Confirmation — 2026-05
+
+Customer: Modern Recycling Corp (C014)
+
+  SH00255: invoice 3,198,221.14, paid 407,502.55, outstanding 2,790,718.59, due 2026-05-27 (days_to_due=6)
+  SH00266: invoice 6,665,796.40, paid 0.00, outstanding 6,665,796.40, due 2026-05-30 (days_to_due=9)
+  SH00291: invoice 539,054.88, paid 0.00, outstanding 539,054.88, due 2026-06-05 (days_to_due=15)
+  SH00328: invoice 1,124,081.62, paid 0.00, outstanding 1,124,081.62, due 2026-06-16 (days_to_due=26)
+  SH00331: invoice 7,935,106.47, paid 0.00, outstanding 7,935,106.47, due 2026-06-17 (days_to_due=27)
+  SH00333: invoice 15,866,103.71, paid 0.00, outstanding 15,866,103.71, due 2026-06-19 (days_to_due=29)
+  SH00376: invoice 1,231,420.40, paid 0.00, outstanding 1,231,420.40, due 2026-07-02 (days_to_due=42)
+  SH00381: invoice 572,863.31, paid 0.00, outstanding 572,863.31, due 2026-07-02 (days_to_due=42)
+  SH00392: invoice 2,320,185.38, paid 0.00, outstanding 2,320,185.38, due 2026-07-02 (days_to_due=42)
+  SH00395: invoice 930,009.02, paid 0.00, outstanding 930,009.02, due 2026-07-02 (days_to_due=42)
+  SH00404: invoice 1,995,603.96, paid 0.00, outstanding 1,995,603.96, due 2026-07-02 (days_to_due=42)
+  SH00481: invoice 2,307,321.02, paid 0.00, outstanding 2,307,321.02, due 2026-07-03 (days_to_due=43)
+  SH00487: invoice 496,190.46, paid 0.00, outstanding 496,190.46, due 2026-07-03 (days_to_due=43)
+  SH00542: invoice 165,941.89, paid 0.00, outstanding 165,941.89, due 2026-07-03 (days_to_due=43)
+  SH00549: invoice 183,952.72, paid 0.00, outstanding 183,952.72, due 2026-07-03 (days_to_due=43)
+  SH00555: invoice 1,126,530.31, paid 0.00, outstanding 1,126,530.31, due 2026-07-04 (days_to_due=44)
+  SH00562: invoice 557,620.00, paid 0.00, outstanding 557,620.00, due 2026-07-04 (days_to_due=44)
+
+Total outstanding: 46,808,500.14
+
+Please confirm or dispute by reply.
+CC: ai-strategy-interns-case-submissionsleads@recykal.com

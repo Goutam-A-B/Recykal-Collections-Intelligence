@@ -1,0 +1,12 @@
+Monthly Balance Confirmation — 2026-05
+
+Customer: Pioneer Scrap Traders (C004)
+
+  SH00551: invoice 3,117,195.62, paid 3,089,117.02, outstanding 28,078.60, due 2026-07-03 (days_to_due=43)
+  SH00574: invoice 177,829.12, paid 0.00, outstanding 177,829.12, due 2026-07-04 (days_to_due=44)
+  SH00581: invoice 785,680.00, paid 0.00, outstanding 785,680.00, due 2026-07-05 (days_to_due=45)
+
+Total outstanding: 991,587.72
+
+Please confirm or dispute by reply.
+CC: ai-strategy-interns-case-submissionsleads@recykal.com

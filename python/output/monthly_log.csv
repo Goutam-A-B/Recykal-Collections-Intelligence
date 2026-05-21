@@ -1,0 +1,16 @@
+sent_at,customer_id,period,email,total_outstanding,file,dry_run
+2026-05-21T14:57:40,C001,2026-05,customer.1@recykal.com,84430958.69000004,/home/ubuntu/Recykal-Collections-Intelligence/python/output/emails/monthly/C001_2026-05.txt,True
+2026-05-21T14:57:40,C002,2026-05,customer.2@recykal.com,22630722.860000003,/home/ubuntu/Recykal-Collections-Intelligence/python/output/emails/monthly/C002_2026-05.txt,True
+2026-05-21T14:57:40,C003,2026-05,customer.3@recykal.com,23347254.160000004,/home/ubuntu/Recykal-Collections-Intelligence/python/output/emails/monthly/C003_2026-05.txt,True
+2026-05-21T14:57:40,C004,2026-05,customer.4@recykal.com,991587.7199999978,/home/ubuntu/Recykal-Collections-Intelligence/python/output/emails/monthly/C004_2026-05.txt,True
+2026-05-21T14:57:40,C005,2026-05,customer.5@recykal.com,13469975.920000006,/home/ubuntu/Recykal-Collections-Intelligence/python/output/emails/monthly/C005_2026-05.txt,True
+2026-05-21T14:57:40,C007,2026-05,customer.7@recykal.com,39907983.720000006,/home/ubuntu/Recykal-Collections-Intelligence/python/output/emails/monthly/C007_2026-05.txt,True
+2026-05-21T14:57:40,C008,2026-05,customer.8@recykal.com,42279286.8,/home/ubuntu/Recykal-Collections-Intelligence/python/output/emails/monthly/C008_2026-05.txt,True
+2026-05-21T14:57:40,C010,2026-05,customer.10@recykal.com,40346711.83,/home/ubuntu/Recykal-Collections-Intelligence/python/output/emails/monthly/C010_2026-05.txt,True
+2026-05-21T14:57:40,C011,2026-05,customer.11@recykal.com,1020018.3000000012,/home/ubuntu/Recykal-Collections-Intelligence/python/output/emails/monthly/C011_2026-05.txt,True
+2026-05-21T14:57:40,C012,2026-05,customer.12@recykal.com,23253327.210000005,/home/ubuntu/Recykal-Collections-Intelligence/python/output/emails/monthly/C012_2026-05.txt,True
+2026-05-21T14:57:40,C013,2026-05,customer.13@recykal.com,66135160.2,/home/ubuntu/Recykal-Collections-Intelligence/python/output/emails/monthly/C013_2026-05.txt,True
+2026-05-21T14:57:40,C014,2026-05,customer.14@recykal.com,46808500.14000001,/home/ubuntu/Recykal-Collections-Intelligence/python/output/emails/monthly/C014_2026-05.txt,True
+2026-05-21T14:57:40,C016,2026-05,customer.16@recykal.com,108009483.47999999,/home/ubuntu/Recykal-Collections-Intelligence/python/output/emails/monthly/C016_2026-05.txt,True
+2026-05-21T14:57:40,C017,2026-05,customer.17@recykal.com,67742973.02000001,/home/ubuntu/Recykal-Collections-Intelligence/python/output/emails/monthly/C017_2026-05.txt,True
+2026-05-21T14:57:40,C018,2026-05,customer.18@recykal.com,41773471.97,/home/ubuntu/Recykal-Collections-Intelligence/python/output/emails/monthly/C018_2026-05.txt,True

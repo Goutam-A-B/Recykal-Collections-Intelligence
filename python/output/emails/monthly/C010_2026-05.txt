@@ -1,0 +1,18 @@
+Monthly Balance Confirmation — 2026-05
+
+Customer: Anand Scrap Traders (C010)
+
+  SH00334: invoice 21,902,932.02, paid 21,834,510.80, outstanding 68,421.22, due 2026-06-19 (days_to_due=29)
+  SH00358: invoice 23,871,372.39, paid 0.00, outstanding 23,871,372.39, due 2026-06-24 (days_to_due=34)
+  SH00391: invoice 1,924,145.41, paid 0.00, outstanding 1,924,145.41, due 2026-07-02 (days_to_due=42)
+  SH00427: invoice 2,913,759.13, paid 0.00, outstanding 2,913,759.13, due 2026-07-02 (days_to_due=42)
+  SH00475: invoice 916,559.95, paid 0.00, outstanding 916,559.95, due 2026-07-03 (days_to_due=43)
+  SH00511: invoice 161,620.93, paid 0.00, outstanding 161,620.93, due 2026-07-03 (days_to_due=43)
+  SH00517: invoice 4,400,555.04, paid 0.00, outstanding 4,400,555.04, due 2026-07-03 (days_to_due=43)
+  SH00559: invoice 1,323,590.02, paid 0.00, outstanding 1,323,590.02, due 2026-07-04 (days_to_due=44)
+  SH00573: invoice 4,766,687.74, paid 0.00, outstanding 4,766,687.74, due 2026-07-04 (days_to_due=44)
+
+Total outstanding: 40,346,711.83
+
+Please confirm or dispute by reply.
+CC: ai-strategy-interns-case-submissionsleads@recykal.com

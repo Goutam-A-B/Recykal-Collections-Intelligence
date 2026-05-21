@@ -1,0 +1,8 @@
+sent_at,shipment_id,reminder_type,due_date,customer_email,outstanding,file,dry_run
+2026-05-21T14:57:40,SH00038,OVERDUE,2026-03-14,customer.1@recykal.com,25589194.69,/home/ubuntu/Recykal-Collections-Intelligence/python/output/emails/reminders/SH00038_OVERDUE_20260521.txt,True
+2026-05-21T14:57:40,SH00054,OVERDUE,2026-03-17,customer.1@recykal.com,2485936.99,/home/ubuntu/Recykal-Collections-Intelligence/python/output/emails/reminders/SH00054_OVERDUE_20260521.txt,True
+2026-05-21T14:57:40,SH00123,OVERDUE,2026-04-04,customer.1@recykal.com,4298958.3,/home/ubuntu/Recykal-Collections-Intelligence/python/output/emails/reminders/SH00123_OVERDUE_20260521.txt,True
+2026-05-21T14:57:40,SH00143,OVERDUE,2026-04-10,customer.1@recykal.com,2334531.58,/home/ubuntu/Recykal-Collections-Intelligence/python/output/emails/reminders/SH00143_OVERDUE_20260521.txt,True
+2026-05-21T14:57:40,SH00154,OVERDUE,2026-04-12,customer.1@recykal.com,663577.94,/home/ubuntu/Recykal-Collections-Intelligence/python/output/emails/reminders/SH00154_OVERDUE_20260521.txt,True
+2026-05-21T14:57:40,SH00198,OVERDUE,2026-04-25,customer.1@recykal.com,785280.16,/home/ubuntu/Recykal-Collections-Intelligence/python/output/emails/reminders/SH00198_OVERDUE_20260521.txt,True
+2026-05-21T14:57:40,SH00279,OVERDUE,2026-05-18,customer.1@recykal.com,40646035.27,/home/ubuntu/Recykal-Collections-Intelligence/python/output/emails/reminders/SH00279_OVERDUE_20260521.txt,True

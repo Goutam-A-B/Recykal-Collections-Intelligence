@@ -1,0 +1,16 @@
+Monthly Balance Confirmation — 2026-05
+
+Customer: Greentech Recyclers Pvt Ltd (C002)
+
+  SH00498: invoice 3,840,418.56, paid 2,767,440.74, outstanding 1,072,977.82, due 2026-07-03 (days_to_due=43)
+  SH00499: invoice 10,710,069.28, paid 0.00, outstanding 10,710,069.28, due 2026-07-03 (days_to_due=43)
+  SH00506: invoice 1,220,035.51, paid 0.00, outstanding 1,220,035.51, due 2026-07-03 (days_to_due=43)
+  SH00527: invoice 381,827.60, paid 0.00, outstanding 381,827.60, due 2026-07-03 (days_to_due=43)
+  SH00547: invoice 4,377,498.16, paid 0.00, outstanding 4,377,498.16, due 2026-07-03 (days_to_due=43)
+  SH00552: invoice 2,778,363.39, paid 0.00, outstanding 2,778,363.39, due 2026-07-03 (days_to_due=43)
+  SH00591: invoice 2,089,951.10, paid 0.00, outstanding 2,089,951.10, due 2026-07-05 (days_to_due=45)
+
+Total outstanding: 22,630,722.86
+
+Please confirm or dispute by reply.
+CC: ai-strategy-interns-case-submissionsleads@recykal.com

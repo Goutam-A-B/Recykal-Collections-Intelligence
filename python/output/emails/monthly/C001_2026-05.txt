@@ -1,0 +1,24 @@
+Monthly Balance Confirmation — 2026-05
+
+Customer: Bhavya Metals Pvt Ltd (C001)
+
+  SH00038: invoice 39,111,768.12, paid 13,522,573.43, outstanding 25,589,194.69, due 2026-03-14 (days_to_due=-68)
+  SH00054: invoice 2,485,936.99, paid 0.00, outstanding 2,485,936.99, due 2026-03-17 (days_to_due=-65)
+  SH00123: invoice 4,298,958.30, paid 0.00, outstanding 4,298,958.30, due 2026-04-04 (days_to_due=-47)
+  SH00143: invoice 2,334,531.58, paid 0.00, outstanding 2,334,531.58, due 2026-04-10 (days_to_due=-41)
+  SH00154: invoice 663,577.94, paid 0.00, outstanding 663,577.94, due 2026-04-12 (days_to_due=-39)
+  SH00198: invoice 785,280.16, paid 0.00, outstanding 785,280.16, due 2026-04-25 (days_to_due=-26)
+  SH00279: invoice 40,646,035.27, paid 0.00, outstanding 40,646,035.27, due 2026-05-18 (days_to_due=-3)
+  SH00287: invoice 1,306,174.69, paid 0.00, outstanding 1,306,174.69, due 2026-05-21 (days_to_due=0)
+  SH00356: invoice 1,212,090.43, paid 0.00, outstanding 1,212,090.43, due 2026-06-09 (days_to_due=19)
+  SH00386: invoice 1,376,492.43, paid 0.00, outstanding 1,376,492.43, due 2026-06-17 (days_to_due=27)
+  SH00439: invoice 125,287.68, paid 0.00, outstanding 125,287.68, due 2026-06-17 (days_to_due=27)
+  SH00492: invoice 1,102,511.76, paid 0.00, outstanding 1,102,511.76, due 2026-06-18 (days_to_due=28)
+  SH00529: invoice 682,044.72, paid 0.00, outstanding 682,044.72, due 2026-06-18 (days_to_due=28)
+  SH00536: invoice 924,780.87, paid 0.00, outstanding 924,780.87, due 2026-06-18 (days_to_due=28)
+  SH00595: invoice 898,061.18, paid 0.00, outstanding 898,061.18, due 2026-06-20 (days_to_due=30)
+
+Total outstanding: 84,430,958.69
+
+Please confirm or dispute by reply.
+CC: ai-strategy-interns-case-submissionsleads@recykal.com

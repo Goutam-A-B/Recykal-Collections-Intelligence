@@ -1,0 +1,29 @@
+Monthly Balance Confirmation — 2026-05
+
+Customer: Jai Hind Metal Works (C013)
+
+  SH00349: invoice 30,904,984.23, paid 7,004,101.79, outstanding 23,900,882.44, due 2026-06-07 (days_to_due=17)
+  SH00367: invoice 171,216.86, paid 0.00, outstanding 171,216.86, due 2026-06-17 (days_to_due=27)
+  SH00388: invoice 2,537,012.15, paid 0.00, outstanding 2,537,012.15, due 2026-06-17 (days_to_due=27)
+  SH00390: invoice 3,476,749.70, paid 0.00, outstanding 3,476,749.70, due 2026-06-17 (days_to_due=27)
+  SH00397: invoice 1,925,680.70, paid 0.00, outstanding 1,925,680.70, due 2026-06-17 (days_to_due=27)
+  SH00417: invoice 11,232,483.25, paid 0.00, outstanding 11,232,483.25, due 2026-06-17 (days_to_due=27)
+  SH00437: invoice 3,582,419.11, paid 0.00, outstanding 3,582,419.11, due 2026-06-17 (days_to_due=27)
+  SH00445: invoice 142,536.24, paid 0.00, outstanding 142,536.24, due 2026-06-17 (days_to_due=27)
+  SH00462: invoice 1,796,180.42, paid 0.00, outstanding 1,796,180.42, due 2026-06-18 (days_to_due=28)
+  SH00474: invoice 279,468.90, paid 0.00, outstanding 279,468.90, due 2026-06-18 (days_to_due=28)
+  SH00494: invoice 4,873,507.74, paid 0.00, outstanding 4,873,507.74, due 2026-06-18 (days_to_due=28)
+  SH00505: invoice 621,304.22, paid 0.00, outstanding 621,304.22, due 2026-06-18 (days_to_due=28)
+  SH00510: invoice 1,012,122.11, paid 0.00, outstanding 1,012,122.11, due 2026-06-18 (days_to_due=28)
+  SH00512: invoice 301,275.41, paid 0.00, outstanding 301,275.41, due 2026-06-18 (days_to_due=28)
+  SH00523: invoice 344,668.91, paid 0.00, outstanding 344,668.91, due 2026-06-18 (days_to_due=28)
+  SH00553: invoice 1,008,686.34, paid 0.00, outstanding 1,008,686.34, due 2026-06-18 (days_to_due=28)
+  SH00564: invoice 1,965,538.96, paid 0.00, outstanding 1,965,538.96, due 2026-06-19 (days_to_due=29)
+  SH00568: invoice 2,129,204.45, paid 0.00, outstanding 2,129,204.45, due 2026-06-19 (days_to_due=29)
+  SH00572: invoice 566,726.16, paid 0.00, outstanding 566,726.16, due 2026-06-19 (days_to_due=29)
+  SH00589: invoice 4,267,496.13, paid 0.00, outstanding 4,267,496.13, due 2026-06-20 (days_to_due=30)
+
+Total outstanding: 66,135,160.20
+
+Please confirm or dispute by reply.
+CC: ai-strategy-interns-case-submissionsleads@recykal.com

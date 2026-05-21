@@ -1,0 +1,18 @@
+Monthly Balance Confirmation — 2026-05
+
+Customer: Apex Metal Industries (C003)
+
+  SH00338: invoice 3,722,402.99, paid 210,323.68, outstanding 3,512,079.31, due 2026-06-05 (days_to_due=15)
+  SH00394: invoice 4,675,948.03, paid 0.00, outstanding 4,675,948.03, due 2026-06-17 (days_to_due=27)
+  SH00400: invoice 5,589,238.74, paid 0.00, outstanding 5,589,238.74, due 2026-06-17 (days_to_due=27)
+  SH00452: invoice 904,372.56, paid 0.00, outstanding 904,372.56, due 2026-06-18 (days_to_due=28)
+  SH00482: invoice 783,124.61, paid 0.00, outstanding 783,124.61, due 2026-06-18 (days_to_due=28)
+  SH00561: invoice 443,530.75, paid 0.00, outstanding 443,530.75, due 2026-06-19 (days_to_due=29)
+  SH00571: invoice 1,406,155.26, paid 0.00, outstanding 1,406,155.26, due 2026-06-19 (days_to_due=29)
+  SH00584: invoice 3,841,588.80, paid 0.00, outstanding 3,841,588.80, due 2026-06-20 (days_to_due=30)
+  SH00587: invoice 2,191,216.10, paid 0.00, outstanding 2,191,216.10, due 2026-06-20 (days_to_due=30)
+
+Total outstanding: 23,347,254.16
+
+Please confirm or dispute by reply.
+CC: ai-strategy-interns-case-submissionsleads@recykal.com

@@ -1,0 +1,33 @@
+Monthly Balance Confirmation — 2026-05
+
+Customer: Prime Metal Industries (C016)
+
+  SH00230: invoice 11,861,242.24, paid 1,023,542.13, outstanding 10,837,700.11, due 2026-05-18 (days_to_due=-3)
+  SH00268: invoice 2,602,107.76, paid 0.00, outstanding 2,602,107.76, due 2026-05-30 (days_to_due=9)
+  SH00288: invoice 640,545.25, paid 0.00, outstanding 640,545.25, due 2026-06-05 (days_to_due=15)
+  SH00315: invoice 3,364,871.89, paid 0.00, outstanding 3,364,871.89, due 2026-06-13 (days_to_due=23)
+  SH00343: invoice 119,399.28, paid 0.00, outstanding 119,399.28, due 2026-06-21 (days_to_due=31)
+  SH00345: invoice 42,853,968.43, paid 0.00, outstanding 42,853,968.43, due 2026-06-22 (days_to_due=32)
+  SH00373: invoice 1,175,068.61, paid 0.00, outstanding 1,175,068.61, due 2026-07-02 (days_to_due=42)
+  SH00374: invoice 218,736.00, paid 0.00, outstanding 218,736.00, due 2026-07-02 (days_to_due=42)
+  SH00384: invoice 1,338,051.23, paid 0.00, outstanding 1,338,051.23, due 2026-07-02 (days_to_due=42)
+  SH00402: invoice 1,035,740.16, paid 0.00, outstanding 1,035,740.16, due 2026-07-02 (days_to_due=42)
+  SH00408: invoice 5,622,815.52, paid 0.00, outstanding 5,622,815.52, due 2026-07-02 (days_to_due=42)
+  SH00419: invoice 1,853,254.90, paid 0.00, outstanding 1,853,254.90, due 2026-07-02 (days_to_due=42)
+  SH00425: invoice 1,063,814.84, paid 0.00, outstanding 1,063,814.84, due 2026-07-02 (days_to_due=42)
+  SH00434: invoice 3,154,496.36, paid 0.00, outstanding 3,154,496.36, due 2026-07-02 (days_to_due=42)
+  SH00461: invoice 11,782,627.10, paid 0.00, outstanding 11,782,627.10, due 2026-07-03 (days_to_due=43)
+  SH00467: invoice 6,225,023.45, paid 0.00, outstanding 6,225,023.45, due 2026-07-03 (days_to_due=43)
+  SH00480: invoice 476,673.57, paid 0.00, outstanding 476,673.57, due 2026-07-03 (days_to_due=43)
+  SH00483: invoice 1,783,877.76, paid 0.00, outstanding 1,783,877.76, due 2026-07-03 (days_to_due=43)
+  SH00489: invoice 3,663,150.40, paid 0.00, outstanding 3,663,150.40, due 2026-07-03 (days_to_due=43)
+  SH00522: invoice 2,430,200.30, paid 0.00, outstanding 2,430,200.30, due 2026-07-03 (days_to_due=43)
+  SH00531: invoice 864,327.82, paid 0.00, outstanding 864,327.82, due 2026-07-03 (days_to_due=43)
+  SH00546: invoice 1,374,227.01, paid 0.00, outstanding 1,374,227.01, due 2026-07-03 (days_to_due=43)
+  SH00588: invoice 644,520.58, paid 0.00, outstanding 644,520.58, due 2026-07-05 (days_to_due=45)
+  SH00593: invoice 2,884,285.15, paid 0.00, outstanding 2,884,285.15, due 2026-07-05 (days_to_due=45)
+
+Total outstanding: 108,009,483.48
+
+Please confirm or dispute by reply.
+CC: ai-strategy-interns-case-submissionsleads@recykal.com

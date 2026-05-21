@@ -1,0 +1,23 @@
+Monthly Balance Confirmation — 2026-05
+
+Customer: Eco Metals Processing (C007)
+
+  SH00355: invoice 6,574,721.64, paid 4,446,613.92, outstanding 2,128,107.72, due 2026-06-09 (days_to_due=19)
+  SH00372: invoice 567,972.72, paid 0.00, outstanding 567,972.72, due 2026-06-17 (days_to_due=27)
+  SH00421: invoice 2,857,143.44, paid 0.00, outstanding 2,857,143.44, due 2026-06-17 (days_to_due=27)
+  SH00422: invoice 500,323.82, paid 0.00, outstanding 500,323.82, due 2026-06-17 (days_to_due=27)
+  SH00454: invoice 7,234,172.78, paid 0.00, outstanding 7,234,172.78, due 2026-06-18 (days_to_due=28)
+  SH00459: invoice 2,415,629.89, paid 0.00, outstanding 2,415,629.89, due 2026-06-18 (days_to_due=28)
+  SH00466: invoice 5,561,750.64, paid 0.00, outstanding 5,561,750.64, due 2026-06-18 (days_to_due=28)
+  SH00490: invoice 1,452,306.24, paid 0.00, outstanding 1,452,306.24, due 2026-06-18 (days_to_due=28)
+  SH00502: invoice 3,571,415.57, paid 0.00, outstanding 3,571,415.57, due 2026-06-18 (days_to_due=28)
+  SH00544: invoice 8,553,228.58, paid 0.00, outstanding 8,553,228.58, due 2026-06-18 (days_to_due=28)
+  SH00548: invoice 3,356,367.46, paid 0.00, outstanding 3,356,367.46, due 2026-06-18 (days_to_due=28)
+  SH00556: invoice 694,809.02, paid 0.00, outstanding 694,809.02, due 2026-06-19 (days_to_due=29)
+  SH00570: invoice 476,944.38, paid 0.00, outstanding 476,944.38, due 2026-06-19 (days_to_due=29)
+  SH00582: invoice 537,811.46, paid 0.00, outstanding 537,811.46, due 2026-06-20 (days_to_due=30)
+
+Total outstanding: 39,907,983.72
+
+Please confirm or dispute by reply.
+CC: ai-strategy-interns-case-submissionsleads@recykal.com

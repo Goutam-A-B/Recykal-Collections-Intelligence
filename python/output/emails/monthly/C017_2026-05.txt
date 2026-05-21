@@ -1,0 +1,28 @@
+Monthly Balance Confirmation — 2026-05
+
+Customer: Global Scrap Solutions (C017)
+
+  SH00382: invoice 723,058.56, paid 626,244.44, outstanding 96,814.12, due 2026-06-17 (days_to_due=27)
+  SH00393: invoice 4,430,364.06, paid 0.00, outstanding 4,430,364.06, due 2026-06-17 (days_to_due=27)
+  SH00396: invoice 2,356,642.78, paid 0.00, outstanding 2,356,642.78, due 2026-06-17 (days_to_due=27)
+  SH00401: invoice 7,528,598.48, paid 0.00, outstanding 7,528,598.48, due 2026-06-17 (days_to_due=27)
+  SH00405: invoice 11,640,897.65, paid 0.00, outstanding 11,640,897.65, due 2026-06-17 (days_to_due=27)
+  SH00414: invoice 883,859.65, paid 0.00, outstanding 883,859.65, due 2026-06-17 (days_to_due=27)
+  SH00430: invoice 288,888.32, paid 0.00, outstanding 288,888.32, due 2026-06-17 (days_to_due=27)
+  SH00436: invoice 6,954,011.64, paid 0.00, outstanding 6,954,011.64, due 2026-06-17 (days_to_due=27)
+  SH00455: invoice 1,503,301.41, paid 0.00, outstanding 1,503,301.41, due 2026-06-18 (days_to_due=28)
+  SH00478: invoice 349,245.07, paid 0.00, outstanding 349,245.07, due 2026-06-18 (days_to_due=28)
+  SH00496: invoice 671,427.20, paid 0.00, outstanding 671,427.20, due 2026-06-18 (days_to_due=28)
+  SH00508: invoice 5,243,555.52, paid 0.00, outstanding 5,243,555.52, due 2026-06-18 (days_to_due=28)
+  SH00514: invoice 1,006,158.16, paid 0.00, outstanding 1,006,158.16, due 2026-06-18 (days_to_due=28)
+  SH00535: invoice 1,015,854.00, paid 0.00, outstanding 1,015,854.00, due 2026-06-18 (days_to_due=28)
+  SH00539: invoice 8,640,886.30, paid 0.00, outstanding 8,640,886.30, due 2026-06-18 (days_to_due=28)
+  SH00540: invoice 823,111.18, paid 0.00, outstanding 823,111.18, due 2026-06-18 (days_to_due=28)
+  SH00554: invoice 9,302,145.79, paid 0.00, outstanding 9,302,145.79, due 2026-06-19 (days_to_due=29)
+  SH00567: invoice 3,177,174.00, paid 0.00, outstanding 3,177,174.00, due 2026-06-19 (days_to_due=29)
+  SH00579: invoice 1,830,037.69, paid 0.00, outstanding 1,830,037.69, due 2026-06-20 (days_to_due=30)
+
+Total outstanding: 67,742,973.02
+
+Please confirm or dispute by reply.
+CC: ai-strategy-interns-case-submissionsleads@recykal.com

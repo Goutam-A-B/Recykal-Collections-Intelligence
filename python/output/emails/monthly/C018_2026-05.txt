@@ -1,0 +1,24 @@
+Monthly Balance Confirmation — 2026-05
+
+Customer: Lakshmi Alloys Ltd (C018)
+
+  SH00407: invoice 1,996,107.90, paid 947,738.06, outstanding 1,048,369.84, due 2026-07-02 (days_to_due=42)
+  SH00411: invoice 7,868,624.21, paid 0.00, outstanding 7,868,624.21, due 2026-07-02 (days_to_due=42)
+  SH00412: invoice 774,966.53, paid 0.00, outstanding 774,966.53, due 2026-07-02 (days_to_due=42)
+  SH00433: invoice 2,204,065.83, paid 0.00, outstanding 2,204,065.83, due 2026-07-02 (days_to_due=42)
+  SH00457: invoice 4,799,138.40, paid 0.00, outstanding 4,799,138.40, due 2026-07-03 (days_to_due=43)
+  SH00464: invoice 877,848.05, paid 0.00, outstanding 877,848.05, due 2026-07-03 (days_to_due=43)
+  SH00465: invoice 81,449.09, paid 0.00, outstanding 81,449.09, due 2026-07-03 (days_to_due=43)
+  SH00468: invoice 213,805.62, paid 0.00, outstanding 213,805.62, due 2026-07-03 (days_to_due=43)
+  SH00476: invoice 3,843,130.37, paid 0.00, outstanding 3,843,130.37, due 2026-07-03 (days_to_due=43)
+  SH00477: invoice 1,113,307.11, paid 0.00, outstanding 1,113,307.11, due 2026-07-03 (days_to_due=43)
+  SH00501: invoice 912,930.60, paid 0.00, outstanding 912,930.60, due 2026-07-03 (days_to_due=43)
+  SH00507: invoice 3,932,146.51, paid 0.00, outstanding 3,932,146.51, due 2026-07-03 (days_to_due=43)
+  SH00509: invoice 8,476,396.54, paid 0.00, outstanding 8,476,396.54, due 2026-07-03 (days_to_due=43)
+  SH00520: invoice 892,540.91, paid 0.00, outstanding 892,540.91, due 2026-07-03 (days_to_due=43)
+  SH00590: invoice 4,734,752.36, paid 0.00, outstanding 4,734,752.36, due 2026-07-05 (days_to_due=45)
+
+Total outstanding: 41,773,471.97
+
+Please confirm or dispute by reply.
+CC: ai-strategy-interns-case-submissionsleads@recykal.com

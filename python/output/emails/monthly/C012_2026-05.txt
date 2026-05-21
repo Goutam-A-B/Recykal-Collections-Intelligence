@@ -1,0 +1,19 @@
+Monthly Balance Confirmation — 2026-05
+
+Customer: Excel Recyclers Pvt Ltd (C012)
+
+  SH00320: invoice 7,002,650.41, paid 5,854,342.76, outstanding 1,148,307.65, due 2026-06-14 (days_to_due=24)
+  SH00371: invoice 2,234,291.77, paid 0.00, outstanding 2,234,291.77, due 2026-07-02 (days_to_due=42)
+  SH00378: invoice 10,655,561.07, paid 0.00, outstanding 10,655,561.07, due 2026-07-02 (days_to_due=42)
+  SH00431: invoice 677,470.98, paid 0.00, outstanding 677,470.98, due 2026-07-02 (days_to_due=42)
+  SH00446: invoice 261,819.26, paid 0.00, outstanding 261,819.26, due 2026-07-02 (days_to_due=42)
+  SH00449: invoice 2,734,372.70, paid 0.00, outstanding 2,734,372.70, due 2026-07-03 (days_to_due=43)
+  SH00479: invoice 145,805.18, paid 0.00, outstanding 145,805.18, due 2026-07-03 (days_to_due=43)
+  SH00513: invoice 2,468,990.16, paid 0.00, outstanding 2,468,990.16, due 2026-07-03 (days_to_due=43)
+  SH00528: invoice 2,434,377.05, paid 0.00, outstanding 2,434,377.05, due 2026-07-03 (days_to_due=43)
+  SH00537: invoice 492,331.39, paid 0.00, outstanding 492,331.39, due 2026-07-03 (days_to_due=43)
+
+Total outstanding: 23,253,327.21
+
+Please confirm or dispute by reply.
+CC: ai-strategy-interns-case-submissionsleads@recykal.com

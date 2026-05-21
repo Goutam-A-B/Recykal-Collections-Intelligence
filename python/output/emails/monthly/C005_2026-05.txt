@@ -1,0 +1,20 @@
+Monthly Balance Confirmation — 2026-05
+
+Customer: Shree Ram Metals (C005)
+
+  SH00370: invoice 2,922,409.28, paid 1,905,201.49, outstanding 1,017,207.79, due 2026-06-17 (days_to_due=27)
+  SH00389: invoice 133,383.60, paid 0.00, outstanding 133,383.60, due 2026-06-17 (days_to_due=27)
+  SH00406: invoice 2,657,792.94, paid 0.00, outstanding 2,657,792.94, due 2026-06-17 (days_to_due=27)
+  SH00447: invoice 1,873,761.12, paid 0.00, outstanding 1,873,761.12, due 2026-06-18 (days_to_due=28)
+  SH00456: invoice 327,712.00, paid 0.00, outstanding 327,712.00, due 2026-06-18 (days_to_due=28)
+  SH00485: invoice 1,336,935.87, paid 0.00, outstanding 1,336,935.87, due 2026-06-18 (days_to_due=28)
+  SH00491: invoice 1,753,584.78, paid 0.00, outstanding 1,753,584.78, due 2026-06-18 (days_to_due=28)
+  SH00493: invoice 1,037,446.59, paid 0.00, outstanding 1,037,446.59, due 2026-06-18 (days_to_due=28)
+  SH00503: invoice 2,368,210.91, paid 0.00, outstanding 2,368,210.91, due 2026-06-18 (days_to_due=28)
+  SH00526: invoice 647,455.20, paid 0.00, outstanding 647,455.20, due 2026-06-18 (days_to_due=28)
+  SH00530: invoice 316,485.12, paid 0.00, outstanding 316,485.12, due 2026-06-18 (days_to_due=28)
+
+Total outstanding: 13,469,975.92
+
+Please confirm or dispute by reply.
+CC: ai-strategy-interns-case-submissionsleads@recykal.com
