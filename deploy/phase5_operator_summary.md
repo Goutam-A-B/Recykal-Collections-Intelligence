@@ -1,6 +1,6 @@
 # Phase 5 Operator Summary
 
-Generated: 2026-05-21T18:55:39
+Generated: 2026-05-21T14:57:40
 
 ## Status
 
@@ -8,20 +8,20 @@ Generated: 2026-05-21T18:55:39
 - Validation warnings/info rows: 0
 - Receivables processed: 595
 - Open shipments: 190
-- Reminder previews prepared: 14
+- Reminder previews prepared: 7
 - Monthly confirmation previews prepared: 15
 - Total outstanding: 622,147,416.02
 - Email mode: dry-run previews only
 
 ## Outputs
 
-- Data issues: `C:\Users\goutam\OneDrive\Desktop\Strategy Intern Assignment\python\output\data_issues.csv`
-- Receivables: `C:\Users\goutam\OneDrive\Desktop\Strategy Intern Assignment\python\output\receivables_computed.csv`
-- Reminder log: `C:\Users\goutam\OneDrive\Desktop\Strategy Intern Assignment\python\output\reminder_log.csv`
-- Monthly log: `C:\Users\goutam\OneDrive\Desktop\Strategy Intern Assignment\python\output\monthly_log.csv`
-- Dashboard HTML: `C:\Users\goutam\OneDrive\Desktop\Strategy Intern Assignment\python\output\dashboard.html`
-- Dashboard Excel for Google Sheets upload: `C:\Users\goutam\OneDrive\Desktop\Strategy Intern Assignment\python\output\collections_dashboard.xlsx`
-- Run log: `C:\Users\goutam\OneDrive\Desktop\Strategy Intern Assignment\python\output\run_log.csv`
+- Data issues: `/home/ubuntu/Recykal-Collections-Intelligence/python/output/data_issues.csv`
+- Receivables: `/home/ubuntu/Recykal-Collections-Intelligence/python/output/receivables_computed.csv`
+- Reminder log: `/home/ubuntu/Recykal-Collections-Intelligence/python/output/reminder_log.csv`
+- Monthly log: `/home/ubuntu/Recykal-Collections-Intelligence/python/output/monthly_log.csv`
+- Dashboard HTML: `/home/ubuntu/Recykal-Collections-Intelligence/python/output/dashboard.html`
+- Dashboard Excel for Google Sheets upload: `/home/ubuntu/Recykal-Collections-Intelligence/python/output/collections_dashboard.xlsx`
+- Run log: `/home/ubuntu/Recykal-Collections-Intelligence/python/output/run_log.csv`
 
 ## Automation / “No Delay” Refresh
 
