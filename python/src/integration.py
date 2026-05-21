@@ -9,7 +9,7 @@ from typing import Any, Callable
 
 import pandas as pd
 
-from .dashboard import build_dashboard, write_excel, write_html
+from .dashboard import build_dashboard, write_excel, write_html, _dashboard_payload
 from .io_loaders import load_all
 from .monthly import run_monthly
 from .receivables import compute_receivables
@@ -144,7 +144,8 @@ def run_phase5_pipeline() -> dict[str, Any]:
     )
 
     # Publish recruiter-facing artifacts into /deploy (keeps a stable, easy-to-find path).
-    shutil.copyfile(html_path, deploy_dir / "index.html")
+    _update_deploy_index(deploy_dir / "index.html", html_path, dashboard,
+                         reminders, monthly, receivables)
     shutil.copyfile(xlsx_path, deploy_dir / "collections_dashboard.xlsx")
     shutil.copyfile(run_log_path, deploy_dir / "run_log.csv")
     shutil.copyfile(summary_path, deploy_dir / "phase5_operator_summary.md")
@@ -160,6 +161,107 @@ def run_phase5_pipeline() -> dict[str, Any]:
         "reminders": len(reminders),
         "monthly": len(monthly),
     }
+
+
+def _update_deploy_index(
+    deploy_index: Path,
+    fallback_html: Path,
+    dashboard: dict[str, pd.DataFrame],
+    reminders: pd.DataFrame,
+    monthly: pd.DataFrame,
+    receivables: pd.DataFrame,
+) -> None:
+    """Update the JSON payload in the existing deploy/index.html.
+
+    If the custom 4-tab index.html exists and contains the payload marker,
+    replace only the JSON payload so the hand-crafted UI is preserved.
+    Otherwise, fall back to copying the pipeline-generated dashboard.html.
+    """
+    import json
+    import re
+
+    payload = _dashboard_payload(dashboard)
+    payload["reminders"] = reminders.to_dict(orient="records")
+    payload["monthly"] = monthly.to_dict(orient="records")
+
+    settled = int(receivables["is_settled"].sum())
+    open_count = int((~receivables["is_settled"]).sum())
+    payload["pipeline_stats"] = {
+        "total_shipments": len(receivables),
+        "settled": settled,
+        "open": open_count,
+        "reminders_sent": len(reminders),
+        "monthly_confirmations": len(monthly),
+        "last_refreshed": datetime.now().isoformat(timespec="seconds"),
+    }
+
+    payload_json = json.dumps(payload, ensure_ascii=False, default=str)
+    safe_json = payload_json.replace("</", "<\\/")
+
+    # Build tasksPayload with email previews and logs.
+    cfg = load_config()
+    out_dir: Path = cfg["_output_dir"]
+    reminder_emails = []
+    rem_dir = out_dir / "emails" / "reminders"
+    if rem_dir.exists():
+        for f in sorted(rem_dir.glob("*.txt")):
+            parts = f.stem.split("_")
+            reminder_emails.append({
+                "shipment_id": parts[0] if parts else f.stem,
+                "type": parts[1] if len(parts) > 1 else "",
+                "date": parts[2] if len(parts) > 2 else "",
+                "content": f.read_text(encoding="utf-8"),
+            })
+    monthly_emails = []
+    mon_dir = out_dir / "emails" / "monthly"
+    if mon_dir.exists():
+        for f in sorted(mon_dir.glob("*.txt")):
+            parts = f.stem.split("_")
+            monthly_emails.append({
+                "customer_id": parts[0] if parts else f.stem,
+                "period": parts[1] if len(parts) > 1 else "",
+                "content": f.read_text(encoding="utf-8"),
+            })
+
+    tasks_payload = {
+        "reminders": reminder_emails,
+        "reminder_log": reminders.to_dict(orient="records"),
+        "monthly": monthly_emails,
+        "monthly_log": monthly.to_dict(orient="records"),
+        "stats": payload["pipeline_stats"],
+    }
+    tasks_json = json.dumps(tasks_payload, ensure_ascii=False, default=str)
+    safe_tasks_json = tasks_json.replace("</", "<\\/")
+
+    if deploy_index.exists():
+        html = deploy_index.read_text(encoding="utf-8")
+        marker = '<script id="payload" type="application/json">'
+        if marker in html:
+            pat = re.compile(
+                r'(<script id="payload" type="application/json">).*?(</script>)',
+                re.DOTALL,
+            )
+            updated = pat.sub(
+                lambda m: m.group(1) + safe_json + m.group(2), html
+            )
+            tasks_pat = re.compile(
+                r'(<script id="tasksPayload" type="application/json">).*?(</script>)',
+                re.DOTALL,
+            )
+            updated = tasks_pat.sub(
+                lambda m: m.group(1) + safe_tasks_json + m.group(2), updated
+            )
+            gen_date = datetime.now().strftime("%Y-%m-%d")
+            updated = re.sub(
+                r'Generated \d{4}-\d{2}-\d{2}',
+                f'Generated {gen_date}',
+                updated,
+            )
+            deploy_index.write_text(updated, encoding="utf-8")
+            return
+
+    # No custom index.html; use the pipeline-generated dashboard.
+    shutil.copyfile(fallback_html, deploy_index)
 
 
 def _write_summary(

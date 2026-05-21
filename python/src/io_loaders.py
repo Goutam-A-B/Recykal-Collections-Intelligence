@@ -50,17 +50,30 @@ def load_all() -> dict[str, pd.DataFrame]:
 
 
 def fetch_csv_from_google(sheet_key: str, gid: str, dest: Path) -> bool:
-    """Try public CSV export. Returns True if saved."""
+    """Try public CSV export via GID or gviz endpoint. Returns True if saved."""
     import requests
 
     cfg = load_config()
     sid = cfg["spreadsheet"]["id"]
-    if not gid:
-        return False
-    url = f"https://docs.google.com/spreadsheets/d/{sid}/export?format=csv&gid={gid}"
-    r = requests.get(url, timeout=30)
-    if r.status_code != 200 or "html" in r.headers.get("Content-Type", "").lower():
-        return False
-    dest.parent.mkdir(parents=True, exist_ok=True)
-    dest.write_bytes(r.content)
-    return True
+
+    # Try GID-based export first (faster, exact).
+    if gid:
+        url = f"https://docs.google.com/spreadsheets/d/{sid}/export?format=csv&gid={gid}"
+        r = requests.get(url, timeout=30)
+        if r.status_code == 200 and "html" not in r.headers.get("Content-Type", "").lower():
+            dest.parent.mkdir(parents=True, exist_ok=True)
+            dest.write_bytes(r.content)
+            return True
+
+    # Fallback: gviz endpoint using sheet name (works without GID).
+    gviz_url = (
+        f"https://docs.google.com/spreadsheets/d/{sid}"
+        f"/gviz/tq?tqx=out:csv&sheet={sheet_key}"
+    )
+    r = requests.get(gviz_url, timeout=30)
+    if r.status_code == 200 and "html" not in r.headers.get("Content-Type", "").lower():
+        dest.parent.mkdir(parents=True, exist_ok=True)
+        dest.write_bytes(r.content)
+        return True
+
+    return False
