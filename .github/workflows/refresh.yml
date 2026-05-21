@@ -1,0 +1,46 @@
+name: Refresh collections outputs
+
+on:
+  workflow_dispatch:
+  schedule:
+    # Keep >= 10 minutes to align with typical cron limits.
+    - cron: "*/15 * * * *"
+
+permissions:
+  contents: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: |
+          cd python
+          pip install -r requirements.txt
+
+      - name: Fetch latest CSV exports (best-effort)
+        run: |
+          cd python
+          python run.py fetch-data || true
+
+      - name: Run pipeline (phase5)
+        run: |
+          cd python
+          python run.py phase5
+
+      - name: Commit refreshed artifacts (deploy/)
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add deploy/ python/output/
+          git diff --cached --quiet || git commit -m "chore: refresh dashboard artifacts"
+          git push
+

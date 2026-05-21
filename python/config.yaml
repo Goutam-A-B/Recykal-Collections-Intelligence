@@ -1,0 +1,29 @@
+# Recykal Collections — Python track configuration
+
+spreadsheet:
+  id: "1FRzRXR5Wp8RObFKaykUKHrWSsbI9dDr_w1hnBsvm8to"
+  url: "https://docs.google.com/spreadsheets/d/1FRzRXR5Wp8RObFKaykUKHrWSsbI9dDr_w1hnBsvm8to/edit"
+  # Tab gids for fetch-data (edit if export fails — from sheet URL #gid=)
+  gids:
+    customers: "1296664018"
+    shipments: ""   # fill from URL when on shipments tab
+    payments: ""    # fill from URL when on payments tab
+
+business:
+  submission_cc: "ai-strategy-interns-case-submissionsleads@recykal.com"
+  large_segment: "Large"
+  valid_segments: ["Large", "Mid", "SME"]
+  timezone: "Asia/Kolkata"
+  epsilon: 0.01
+
+email:
+  enabled: false
+  dry_run: true
+  smtp_host: smtp.gmail.com
+  smtp_port: 587
+  sender: ""
+  app_password: ""
+
+paths:
+  data_dir: data
+  output_dir: output

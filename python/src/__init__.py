@@ -1,0 +1,1 @@
+# Recykal collections Python package
