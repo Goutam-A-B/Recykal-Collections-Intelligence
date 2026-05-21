@@ -3,7 +3,7 @@ apps-script/.clasp.json
 
 # Python
 python/output/
-python/data/*.csv
+#python/data/*.csv
 __pycache__/
 *.pyc
 .venv/
