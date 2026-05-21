@@ -3,8 +3,8 @@ name: Refresh collections outputs
 on:
   workflow_dispatch:
   schedule:
-    # Keep >= 10 minutes to align with typical cron limits.
-    - cron: "*/15 * * * *"
+    # Run once per hour to pick up Google Sheets updates.
+    - cron: "0 * * * *"
 
 permissions:
   contents: write
@@ -26,7 +26,7 @@ jobs:
           cd python
           pip install -r requirements.txt
 
-      - name: Fetch latest CSV exports (best-effort)
+      - name: Fetch latest CSV exports from Google Sheets
         run: |
           cd python
           python run.py fetch-data || true
@@ -41,6 +41,20 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add deploy/ python/output/
-          git diff --cached --quiet || git commit -m "chore: refresh dashboard artifacts"
+          git diff --cached --quiet || git commit -m "chore: refresh dashboard artifacts [$(date -u +%Y-%m-%dT%H:%MZ)]"
           git push
 
+      - name: Update gh-pages branch
+        run: |
+          git fetch origin gh-pages || true
+          git checkout gh-pages 2>/dev/null || git checkout --orphan gh-pages
+          # Remove everything except .git
+          git rm -rf . 2>/dev/null || true
+          # Copy deploy/ contents to root
+          git checkout main -- deploy/
+          cp -r deploy/* .
+          rm -rf deploy/
+          git add -A
+          git diff --cached --quiet || git commit -m "chore: refresh gh-pages [$(date -u +%Y-%m-%dT%H:%MZ)]"
+          git push origin gh-pages --force-with-lease
+          git checkout main
