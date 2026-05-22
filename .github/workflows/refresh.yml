@@ -42,8 +42,8 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
-          # Add only deploy artifacts
-          git add deploy/
+          # Add deploy + Pages entrypoints (supports Pages source = root or /docs)
+          git add deploy/ index.html docs/index.html
 
           # Exit cleanly if no changes
           git diff --cached --quiet && exit 0
