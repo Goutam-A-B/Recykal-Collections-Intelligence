@@ -7,6 +7,7 @@ import json
 import pandas as pd
 
 from .settings import load_config
+from .reconciliation import compute_reconciliation
 from .validate import _parse_date
 
 
@@ -86,12 +87,15 @@ def build_dashboard(
     else:
         trend = pd.DataFrame(columns=["date", "collected"])
 
+    reconciliation = compute_reconciliation(data, receivables)
+
     return {
         "kpis": kpis,
         "by_customer": by_customer,
         "aging": aging,
         "trend": trend,
         "open_receivables": open_rec,
+        "reconciliation": reconciliation,
     }
 
 
@@ -146,6 +150,14 @@ td.num,th.num,.num {{ text-align:right; }}
 .rule strong {{ display:block; margin-bottom:4px; }}
 .rule span {{ color:var(--muted); font-size:13px; }}
 .pill {{ display:inline-flex; align-items:center; border-radius:99px; padding:3px 8px; background:#eef4ff; color:#194185; font-size:12px; font-weight:700; }}
+.pill.pass {{ background:rgba(22,121,76,.12); color:var(--green); }}
+.pill.fail {{ background:rgba(180,35,24,.12); color:var(--red); }}
+.mini-table {{ width:100%; border-collapse:collapse; }}
+.mini-table th {{ width:55%; padding:8px 0; color:#344054; font-weight:700; text-align:left; border-bottom:1px solid var(--line); background:transparent; position:static; }}
+.mini-table td {{ padding:8px 0; border-bottom:1px solid var(--line); }}
+#reconPanel {{ border-left:5px solid var(--blue); background:linear-gradient(180deg, rgba(23,105,170,.06), rgba(255,255,255,1) 65%); }}
+#reconPanel.pass {{ border-left-color:var(--green); background:linear-gradient(180deg, rgba(22,121,76,.08), rgba(255,255,255,1) 65%); }}
+#reconPanel.fail {{ border-left-color:var(--red); background:linear-gradient(180deg, rgba(180,35,24,.08), rgba(255,255,255,1) 65%); }}
 footer {{ color:var(--muted); font-size:12px; margin-top:18px; }}
 @media (max-width:980px) {{ .toolbar,.grid,.rules {{ grid-template-columns:1fr; }} .kpis {{ grid-template-columns:repeat(2,1fr); }} }}
 @media (max-width:560px) {{ header,main {{ padding-left:16px; padding-right:16px; }} .kpis {{ grid-template-columns:1fr; }} .bar-row {{ grid-template-columns:1fr; }} }}
@@ -170,6 +182,19 @@ footer {{ color:var(--muted); font-size:12px; margin-top:18px; }}
     </select>
   </section>
   <section class="kpis" id="kpis"></section>
+  <section class="panel" id="reconPanel">
+    <h2>Data Validation &amp; Reconciliation <span class="pill" id="reconStatus"></span></h2>
+    <table class="mini-table" aria-label="Reconciliation summary">
+      <tbody>
+        <tr><th>Raw CSV Outstanding Total</th><td class="num" id="reconRaw"></td></tr>
+        <tr><th>Dashboard Outstanding Total</th><td class="num" id="reconDash"></td></tr>
+        <tr><th>Difference Amount</th><td class="num" id="reconDiff"></td></tr>
+        <tr><th>Validation Status</th><td id="reconStatusText"></td></tr>
+        <tr><th>Last Validation Timestamp</th><td id="reconTs"></td></tr>
+      </tbody>
+    </table>
+    <div class="metric-note" id="reconNote"></div>
+  </section>
   <section class="grid">
     <div class="panel"><h2>Outstanding by Customer</h2><div class="bars" id="customerBars"></div></div>
     <div class="panel"><h2>Invoice Aging Buckets</h2><div class="bars" id="agingBars"></div></div>
@@ -226,6 +251,30 @@ function renderKpis(rows) {{
   const cards = [['Open Invoice Value',money(invoice),'Filtered open receivables'],['Collected Against Open',money(paid),'Payments mapped to these invoices'],['Outstanding Exposure',money(outstanding),'Remaining balance to collect'],['Overdue Shipments',overdue.toLocaleString('en-IN'),'Open invoices past due']];
   document.getElementById('kpis').innerHTML = cards.map(c => `<div class="card"><div class="metric-label">${{c[0]}}</div><div class="metric-value">${{c[1]}}</div><div class="metric-note">${{c[2]}}</div></div>`).join('');
 }}
+function renderReconciliation() {{
+  const rec = (DATA.reconciliation && DATA.reconciliation.length) ? DATA.reconciliation[0] : null;
+  if (!rec) {{
+    document.getElementById('reconStatus').textContent = 'N/A';
+    document.getElementById('reconStatusText').textContent = 'N/A';
+    return;
+  }}
+  const status = String(rec.validation_status || 'N/A').toUpperCase();
+  const pill = document.getElementById('reconStatus');
+  const panel = document.getElementById('reconPanel');
+  pill.textContent = status;
+  pill.classList.remove('pass','fail');
+  panel.classList.remove('pass','fail');
+  if (status === 'PASS') pill.classList.add('pass');
+  if (status === 'FAIL') pill.classList.add('fail');
+  if (status === 'PASS') panel.classList.add('pass');
+  if (status === 'FAIL') panel.classList.add('fail');
+  document.getElementById('reconRaw').textContent = preciseMoney(rec.raw_csv_outstanding_total);
+  document.getElementById('reconDash').textContent = preciseMoney(rec.dashboard_outstanding_total);
+  document.getElementById('reconDiff').textContent = preciseMoney(rec.difference_amount);
+  document.getElementById('reconStatusText').textContent = status;
+  document.getElementById('reconTs').textContent = rec.last_validation_timestamp || '';
+  document.getElementById('reconNote').textContent = rec.note ? String(rec.note) : '';
+}}
 function renderBars(id, rows, options={{}}) {{
   const max = Math.max(1,...rows.map(r=>r.value));
   document.getElementById(id).innerHTML = rows.map(r => {{
@@ -255,7 +304,7 @@ function renderDetails(rows) {{
   document.getElementById('detailCount').textContent = `${{sorted.length}} open rows`;
   document.getElementById('detailRows').innerHTML = sorted.slice(0,250).map(r => `<tr><td>${{r.shipment_id}}</td><td>${{r.customer_name}}<br><span class="metric-note">${{r.customer_id}}</span></td><td>${{r.segment}}</td><td>${{r.due_date||''}}</td><td class="num">${{r.days_to_due===null?'':r.days_to_due}}</td><td class="num">${{preciseMoney(r.invoice_amount)}}</td><td class="num">${{preciseMoney(r.amount_paid_total)}}</td><td class="num"><strong>${{preciseMoney(r.outstanding)}}</strong></td></tr>`).join('');
 }}
-function render() {{ const rows = filteredRows(); renderKpis(rows); renderCustomerBars(rows); renderAging(rows); renderTrend(); renderDetails(rows); }}
+function render() {{ const rows = filteredRows(); renderKpis(rows); renderReconciliation(); renderCustomerBars(rows); renderAging(rows); renderTrend(); renderDetails(rows); }}
 initFilters(); render();
 </script>
 </body>
@@ -278,6 +327,7 @@ def _dashboard_payload(dashboard: dict[str, pd.DataFrame]) -> dict[str, list[dic
         "aging": records(dashboard["aging"]),
         "trend": records(dashboard["trend"]),
         "open_receivables": records(dashboard["open_receivables"]),
+        "reconciliation": records(dashboard["reconciliation"]),
     }
 
 

@@ -143,6 +143,17 @@ def run_phase5_pipeline() -> dict[str, Any]:
         },
     )
 
+    # Gate deployment on reconciliation FAIL (still writes outputs to python/output/ for inspection).
+    recon = dashboard.get("reconciliation")
+    recon_status = ""
+    if isinstance(recon, pd.DataFrame) and len(recon):
+        recon_status = str(recon.iloc[0].get("validation_status", "")).upper()
+    if recon_status == "FAIL":
+        raise RuntimeError(
+            "Reconciliation failed (FAIL). See python/output/dashboard.html for the validation section "
+            "and python/output/data_issues.csv for input quality checks."
+        )
+
     # Publish recruiter-facing artifacts into /deploy (keeps a stable, easy-to-find path).
     shutil.copyfile(html_path, deploy_dir / "index.html")
     # Also publish a root-level index.html so GitHub Pages can serve from the repo root
@@ -181,6 +192,12 @@ def _write_summary(
     total_outstanding = float(dashboard["kpis"].loc[
         dashboard["kpis"]["metric"] == "Total Outstanding", "value"
     ].iloc[0])
+    recon_status = ""
+    recon_note = ""
+    if "reconciliation" in dashboard and len(dashboard["reconciliation"]):
+        recon_row = dashboard["reconciliation"].iloc[0]
+        recon_status = str(recon_row.get("validation_status", "")).upper()
+        recon_note = str(recon_row.get("note", "")).strip()
 
     text = f"""# Phase 5 Operator Summary
 
@@ -195,6 +212,7 @@ Generated: {datetime.now().isoformat(timespec="seconds")}
 - Reminder previews prepared: {len(reminders)}
 - Monthly confirmation previews prepared: {len(monthly)}
 - Total outstanding: {total_outstanding:,.2f}
+- Dashboard reconciliation: {recon_status or 'N/A'}{f" ({recon_note})" if recon_note else ""}
 - Email mode: {'enabled' if cfg.get('email', {}).get('enabled') else 'dry-run previews only'}
 
 ## Outputs
