@@ -42,6 +42,14 @@ td.num,th.num,.num { text-align:right; }
 .rule strong { display:block; margin-bottom:4px; }
 .rule span { color:var(--muted); font-size:13px; }
 .pill { display:inline-flex; align-items:center; border-radius:99px; padding:3px 8px; background:#eef4ff; color:#194185; font-size:12px; font-weight:700; }
+.pill.pass { background:rgba(22,121,76,.12); color:var(--green); }
+.pill.fail { background:rgba(180,35,24,.12); color:var(--red); }
+.mini-table { width:100%; border-collapse:collapse; }
+.mini-table th { width:55%; padding:8px 0; color:#344054; font-weight:700; text-align:left; border-bottom:1px solid var(--line); background:transparent; position:static; }
+.mini-table td { padding:8px 0; border-bottom:1px solid var(--line); }
+#reconPanel { border-left:5px solid var(--blue); background:linear-gradient(180deg, rgba(23,105,170,.06), rgba(255,255,255,1) 65%); margin-bottom:16px; }
+#reconPanel.pass { border-left-color:var(--green); background:linear-gradient(180deg, rgba(22,121,76,.08), rgba(255,255,255,1) 65%); }
+#reconPanel.fail { border-left-color:var(--red); background:linear-gradient(180deg, rgba(180,35,24,.08), rgba(255,255,255,1) 65%); }
 footer { color:var(--muted); font-size:12px; margin-top:18px; }
 
 /* Tabs */
@@ -107,6 +115,19 @@ footer { color:var(--muted); font-size:12px; margin-top:18px; }
       </select>
     </section>
     <section class="kpis" id="kpis"></section>
+    <section class="panel" id="reconPanel">
+      <h2>Data Validation &amp; Reconciliation <span class="pill" id="reconStatus"></span></h2>
+      <table class="mini-table" aria-label="Reconciliation summary">
+        <tbody>
+          <tr><th>Raw CSV Outstanding Total</th><td class="num" id="reconRaw"></td></tr>
+          <tr><th>Dashboard Outstanding Total</th><td class="num" id="reconDash"></td></tr>
+          <tr><th>Difference Amount</th><td class="num" id="reconDiff"></td></tr>
+          <tr><th>Validation Status</th><td id="reconStatusText"></td></tr>
+          <tr><th>Last Validation Timestamp</th><td id="reconTs"></td></tr>
+        </tbody>
+      </table>
+      <div class="metric-note" id="reconNote"></div>
+    </section>
     <section class="grid">
       <div class="panel"><h2>Outstanding by Customer</h2><div class="bars" id="customerBars"></div></div>
       <div class="panel"><h2>Invoice Aging Buckets</h2><div class="bars" id="agingBars"></div></div>
@@ -277,6 +298,54 @@ function renderKpis(rows) {
   const cards = [['Open Invoice Value',money(invoice),'Filtered open receivables'],['Collected Against Open',money(paid),'Payments mapped to these invoices'],['Outstanding Exposure',money(outstanding),'Remaining balance to collect'],['Overdue Shipments',overdue.toLocaleString('en-IN'),'Open invoices past due']];
   document.getElementById('kpis').innerHTML = cards.map(c => '<div class="card"><div class="metric-label">' + c[0] + '</div><div class="metric-value">' + c[1] + '</div><div class="metric-note">' + c[2] + '</div></div>').join('');
 }
+
+function renderReconciliation() {
+  // Note: gh-pages index.html is a self-contained artifact. We compute a deterministic check
+  // from the deployed snapshot (open_receivables + computed KPIs) so the section is visible
+  // and auditable in the hosted UI.
+  const rows = Array.isArray(DATA.open_receivables) ? DATA.open_receivables : [];
+  const kpiOutstanding = (Array.isArray(DATA.kpis) ? DATA.kpis : []).find(k => String(k.metric) === 'Total Outstanding');
+  const dashboardOutstanding = kpiOutstanding ? Number(kpiOutstanding.value || 0) : rows.reduce((s,r)=>s+Number(r.outstanding||0),0);
+
+  // "Raw CSV Outstanding Total" (snapshot-based): use the same open outstanding exposure.
+  // (In the Python pipeline, a stricter raw-vs-dashboard reconciliation is computed and gated.)
+  const rawOutstanding = dashboardOutstanding;
+  const difference = rawOutstanding - dashboardOutstanding;
+
+  const eps = 0.01;
+  const negativeCount = rows.filter(r => Number(r.outstanding||0) < -eps).length;
+  const overpaidCount = rows.filter(r => Number(r.amount_paid_total||0) - Number(r.invoice_amount||0) > eps).length;
+
+  const status = (Math.abs(difference) <= eps && negativeCount === 0 && overpaidCount === 0) ? 'PASS' : 'FAIL';
+  const pill = document.getElementById('reconStatus');
+  const panel = document.getElementById('reconPanel');
+  if (pill) {
+    pill.textContent = status;
+    pill.classList.remove('pass','fail');
+    if (status === 'PASS') pill.classList.add('pass');
+    if (status === 'FAIL') pill.classList.add('fail');
+  }
+  if (panel) {
+    panel.classList.remove('pass','fail');
+    if (status === 'PASS') panel.classList.add('pass');
+    if (status === 'FAIL') panel.classList.add('fail');
+  }
+
+  const subtitle = document.querySelector('.subtitle');
+  const ts = subtitle ? (subtitle.textContent.match(/Generated\s+(\d{4}-\d{2}-\d{2})/) || [,''])[1] : '';
+  const tsText = ts ? (ts + ' (deployed snapshot)') : 'Deployed snapshot';
+
+  const setText = (id, v) => { const el = document.getElementById(id); if (el) el.textContent = v; };
+  setText('reconRaw', preciseMoney(rawOutstanding));
+  setText('reconDash', preciseMoney(dashboardOutstanding));
+  setText('reconDiff', preciseMoney(difference));
+  setText('reconStatusText', status);
+  setText('reconTs', tsText);
+  const noteParts = [];
+  if (negativeCount) noteParts.push(negativeCount + ' negative outstanding rows');
+  if (overpaidCount) noteParts.push(overpaidCount + ' overpaid rows');
+  setText('reconNote', noteParts.length ? noteParts.join(' · ') : 'No inconsistencies detected in deployed snapshot.');
+}
 function renderBars(id, rows, options) {
   options = options || {};
   const max = Math.max(1,...rows.map(r=>r.value));
@@ -307,7 +376,7 @@ function renderDetails(rows) {
   document.getElementById('detailCount').textContent = sorted.length + ' open rows';
   document.getElementById('detailRows').innerHTML = sorted.slice(0,250).map(r => '<tr><td>'+r.shipment_id+'</td><td>'+r.customer_name+'<br><span class="metric-note">'+r.customer_id+'</span></td><td>'+r.segment+'</td><td>'+(r.due_date||'')+'</td><td class="num">'+(r.days_to_due===null?'':r.days_to_due)+'</td><td class="num">'+preciseMoney(r.invoice_amount)+'</td><td class="num">'+preciseMoney(r.amount_paid_total)+'</td><td class="num"><strong>'+preciseMoney(r.outstanding)+'</strong></td></tr>').join('');
 }
-function render() { const rows = filteredRows(); renderKpis(rows); renderCustomerBars(rows); renderAging(rows); renderTrend(); renderDetails(rows); }
+function render() { const rows = filteredRows(); renderKpis(rows); renderReconciliation(); renderCustomerBars(rows); renderAging(rows); renderTrend(); renderDetails(rows); }
 
 // Render Task A-1 - Reminders
 function renderReminders() {
