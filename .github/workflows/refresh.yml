@@ -3,8 +3,8 @@ name: Refresh collections outputs
 on:
   workflow_dispatch:
   schedule:
-    # Runs every 15 minutes
-    - cron: "*/15 * * * *"
+    # Runs every 1 hour
+    - cron: "0 * * * *"
 
 permissions:
   contents: write
@@ -45,8 +45,9 @@ jobs:
           # Add only deploy artifacts
           git add deploy/
 
-          # Commit only if changes exist
-          git diff --cached --quiet || git commit -m "chore: refresh dashboard artifacts"
+          # Exit cleanly if no changes
+          git diff --cached --quiet && exit 0
 
-          # Push changes
+          # Commit and push changes
+          git commit -m "chore: refresh dashboard artifacts"
           git push
