@@ -1,0 +1,21 @@
+customer_id,customer_name,contact_person,city,state,gstin,pan,credit_terms_days,segment,email,phone
+C001,Bhavya Metals Pvt Ltd,Rajesh Kumar,Hyderabad,Telangana,36AABCBM234F1Z5,AABCBM234F,30,Mid,customer.1@recykal.com,+91-9786579303
+C002,Greentech Recyclers Pvt Ltd,Amit Shah,Mumbai,Maharashtra,27AACGR678G1Z2,AACGR5678G,45,Large,customer.2@recykal.com,+91-9219540831
+C003,Apex Metal Industries,Suresh Patel,Ahmedabad,Gujarat,24AAAPA012H1Z9,AAAPA012H,30,Mid,customer.3@recykal.com,+91-9126855092
+C004,Pioneer Scrap Traders,Venkat Rao,Chennai,Tamil Nadu,33AAPST345J1Z3,AAPST345J,45,SME,customer.4@recykal.com,+91-9896233790
+C005,Shree Ram Metals,Dinesh Gupta,Delhi,Delhi,07AASRM678K1Z7,AASRM678K,30,Mid,customer.5@recykal.com,+91-9395310485
+C006,National Alloys Ltd,Pradeep Joshi,Pune,Maharashtra,27AACNA012L1Z4,AACNA012L,45,Large,customer.6@recykal.com,+91-9362950628
+C007,Eco Metals Processing,Ramesh Singh,Bangalore,Karnataka,29AACEMP56M1Z1,AACEMP56M,30,SME,customer.7@recykal.com,+91-9339670711
+C008,Vertex Recycling Solutions,Sanjay Mehta,Surat,Gujarat,24AAVRS890N1Z8,AAVRS890N,45,Mid,customer.8@recykal.com,+91-9249827706
+C009,Sunrise Metal Works,Krishnan Nair,Kochi,Kerala,32AASMW2234P1Z5,AASMW234P,30,SME,customer.9@recykal.com,+91-9890779946
+C010,Anand Scrap Traders,Mahesh Yadav,Jaipur,Rajasthan,08AAAST678Q1Z2,AAAST6678Q,45,Mid,customer.10@recykal.com,+91-9210053353
+C011,Krishna Metals India,Balu Reddy,Hyderabad,Telangana,36AAKMI0123R1Z9,AAKMI0123R,30,Large,customer.11@recykal.com,+91-9826600539
+C012,Excel Recyclers Pvt Ltd,Nitin Agarwal,Nagpur,Maharashtra,27AAXRPL56S1Z6,AAXRPL56S,45,SME,customer.12@recykal.com,+91-9895285932
+C013,Jai Hind Metal Works,Prakash Sharma,Ludhiana,Punjab,03AAJHMW90T1Z3,AAJHMW90T,30,Mid,customer.13@recykal.com,+91-9685582861
+C014,Modern Recycling Corp,Ashok Verma,Indore,Madhya Pradesh,23AAMC2345U1Z0,AAMC2345U,45,Mid,customer.14@recykal.com,+91-9193349856
+C015,Sai Baba Metals,Ganesh Iyer,Coimbatore,Tamil Nadu,33AASBM678V1Z7,AASBM678V,30,SME,customer.15@recykal.com,+91-9734036506
+C016,Prime Metal Industries,Ravi Tiwari,Kanpur,Uttar Pradesh,09AAPMID12W1Z4,AAPMID12W,45,Large,customer.16@recykal.com,+91-9553035110
+C017,Global Scrap Solutions,Harish Pillai,Thrissur,Kerala,32AAGSSP56X1Z1,AAGSSP56X,30,SME,customer.17@recykal.com,+91-9134126396
+C018,Lakshmi Alloys Ltd,Sunil Bansal,Rajkot,Gujarat,24AALL8890Y1Z8,AALL8890Y,45,Mid,customer.18@recykal.com,+91-9131994523
+C019,Satguru Metals,Deepak Chandra,Bhopal,Madhya Pradesh,23AASMTL34Z1Z5,AASMTL34Z,30,SME,customer.19@recykal.com,+91-9200604502
+C020,United Recyclers India,Vijay Kapoor,Gurgaon,Haryana,06AURI6678A1Z2,AURI6678A,45,Large,customer.20@recykal.com,+91-9334760738

@@ -145,6 +145,9 @@ def run_phase5_pipeline() -> dict[str, Any]:
 
     # Publish recruiter-facing artifacts into /deploy (keeps a stable, easy-to-find path).
     shutil.copyfile(html_path, deploy_dir / "index.html")
+    # Also publish a root-level index.html so GitHub Pages can serve from the repo root
+    # (Pages supports "/" or "/docs" as source folders; "deploy/" is not selectable).
+    shutil.copyfile(html_path, project_root / "index.html")
     shutil.copyfile(xlsx_path, deploy_dir / "collections_dashboard.xlsx")
     shutil.copyfile(run_log_path, deploy_dir / "run_log.csv")
     shutil.copyfile(summary_path, deploy_dir / "phase5_operator_summary.md")
