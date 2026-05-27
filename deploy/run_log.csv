@@ -1,7 +1,7 @@
 run_at,job_name,status,records,errors,duration_seconds,notes
-2026-05-27T16:35:16,load_data,Success,0,0,0.01,
-2026-05-27T16:35:16,validate,Success,0,0,0.87,
-2026-05-27T16:35:17,compute_receivables,Success,595,0,0.45,
-2026-05-27T16:35:17,prepare_reminders,Success,10,0,0.03,
-2026-05-27T16:35:17,prepare_monthly_confirmations,Success,15,0,0.03,
-2026-05-27T16:35:17,build_dashboard,Success,190,0,0.41,
+2026-05-27T19:22:21,load_data,Success,0,0,0.01,
+2026-05-27T19:22:21,validate,Success,0,0,0.73,
+2026-05-27T19:22:21,compute_receivables,Success,595,0,0.35,
+2026-05-27T19:22:22,prepare_reminders,Success,10,0,0.02,
+2026-05-27T19:22:22,prepare_monthly_confirmations,Success,15,0,0.02,
+2026-05-27T19:22:22,build_dashboard,Success,190,0,0.3,
