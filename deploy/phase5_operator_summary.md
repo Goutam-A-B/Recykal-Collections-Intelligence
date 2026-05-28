@@ -1,6 +1,6 @@
 # Phase 5 Operator Summary
 
-Generated: 2026-05-27T23:14:56
+Generated: 2026-05-28T02:51:04
 
 ## Status
 
@@ -8,7 +8,7 @@ Generated: 2026-05-27T23:14:56
 - Validation warnings/info rows: 0
 - Receivables processed: 595
 - Open shipments: 190
-- Reminder previews prepared: 10
+- Reminder previews prepared: 9
 - Monthly confirmation previews prepared: 15
 - Total outstanding: 622,147,416.02
 - Dashboard reconciliation: PASS
